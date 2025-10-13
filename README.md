@@ -1,6 +1,6 @@
 # Hi, I’m @mirmohmmadluqman 👋
 
-##### **Portfolio:** https://mirmohmmadluqman.github.io/portfolio/
+##### **Portfolio:** https://mirmohmmadluqman.github.io/portfolio/ It is just for fun !
 
 - I’m interested in Web3  
 - I’m currently learning Advanced Web3 Security and Development  
