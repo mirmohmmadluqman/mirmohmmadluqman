@@ -1,4 +1,4 @@
-# Hi, I’m @mirmohmmadluqman 👋
+# Hi, I’m Mir Mohmmad Luqman 👋
 
 - I’m interested in Web3  
 - I’m currently learning Advanced Web3 Security and Development  
