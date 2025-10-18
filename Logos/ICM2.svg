@@ -1,0 +1,400 @@
+<svg viewBox="0 0 2000 2000" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-30px); } }
+      @keyframes rotate { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+      @keyframes pulse { 0%, 100% { opacity: 0.3; } 50% { opacity: 1; } }
+      @keyframes glow { 0%, 100% { filter: drop-shadow(0 0 5px rgba(100,200,255,0.5)); } 50% { filter: drop-shadow(0 0 20px rgba(100,200,255,1)); } }
+      
+      .star { animation: pulse 4s infinite; }
+      .orbit { animation: rotate 20s linear infinite; }
+      .float-elem { animation: float 6s ease-in-out infinite; }
+      .glow-elem { animation: glow 3s ease-in-out infinite; }
+    </style>
+    
+    <!-- Radial gradients -->
+    <radialGradient id="sunGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#FFE5B4;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#FFA500;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FF6B35;stop-opacity:0.8" />
+    </radialGradient>
+    
+    <radialGradient id="starGrad" cx="40%" cy="40%" r="60%">
+      <stop offset="0%" style="stop-color:#FFFFFF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#87CEEB;stop-opacity:0" />
+    </radialGradient>
+    
+    <radialGradient id="planetBlue" cx="30%" cy="30%" r="70%">
+      <stop offset="0%" style="stop-color:#87CEEB;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1E3A8A;stop-opacity:1" />
+    </radialGradient>
+    
+    <radialGradient id="planetRed" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" style="stop-color:#FF8C42;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8B4513;stop-opacity:1" />
+    </radialGradient>
+    
+    <radialGradient id="nebula" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#9D4EDD;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#3A0CA3;stop-opacity:0" />
+    </radialGradient>
+    
+    <!-- Pattern definitions -->
+    <pattern id="starfield" x="100" y="100" width="100" height="100" patternUnits="userSpaceOnUse">
+      <circle cx="15" cy="15" r="1.5" fill="#FFFFFF" opacity="0.7" />
+      <circle cx="45" cy="30" r="1" fill="#FFFFFF" opacity="0.5" />
+      <circle cx="70" cy="50" r="1.2" fill="#FFFFFF" opacity="0.6" />
+      <circle cx="25" cy="75" r="1" fill="#FFFFFF" opacity="0.4" />
+      <circle cx="60" cy="20" r="1.3" fill="#FFFFFF" opacity="0.8" />
+      <circle cx="80" cy="70" r="0.8" fill="#FFFFFF" opacity="0.3" />
+    </pattern>
+    
+    <filter id="blur">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2" />
+    </filter>
+    
+    <filter id="shadow">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.5" />
+    </filter>
+  </defs>
+  
+  <!-- Background - Deep space -->
+  <rect width="2000" height="2000" fill="#0B0E27" />
+  <rect width="2000" height="2000" fill="url(#starfield)" />
+  
+  <!-- Nebula clouds -->
+  <ellipse cx="300" cy="300" rx="400" ry="350" fill="url(#nebula)" opacity="0.4" />
+  <ellipse cx="1700" cy="1600" rx="450" ry="400" fill="url(#nebula)" opacity="0.3" transform="rotate(-45 1700 1600)" />
+  <ellipse cx="1000" cy="1000" rx="500" ry="450" fill="url(#nebula)" opacity="0.2" />
+  
+  <!-- Central sun with glow -->
+  <g class="glow-elem" transform="translate(1000, 1000)">
+    <circle cx="0" cy="0" r="120" fill="url(#sunGrad)" opacity="0.9" />
+    <circle cx="0" cy="0" r="100" fill="url(#sunGrad)" opacity="0.6" />
+    <circle cx="0" cy="0" r="80" fill="#FFE5B4" opacity="0.4" />
+  </g>
+  
+  <!-- First orbital ring and planets -->
+  <g class="orbit">
+    <circle cx="1000" cy="1000" r="250" fill="none" stroke="#4C5282" stroke-width="1" opacity="0.4" stroke-dasharray="5,5" />
+    <!-- Planet 1 - Blue -->
+    <g transform="translate(1250, 1000)">
+      <circle r="35" fill="url(#planetBlue)" />
+      <circle r="35" fill="#87CEEB" opacity="0.3" filter="url(#shadow)" />
+      <ellipse cx="0" cy="-40" rx="50" ry="8" fill="none" stroke="#4C5282" stroke-width="1" opacity="0.5" />
+    </g>
+  </g>
+  
+  <!-- Second orbital ring and planets -->
+  <g class="orbit" style="animation-duration: 30s; animation-direction: reverse;">
+    <circle cx="1000" cy="1000" r="450" fill="none" stroke="#4C5282" stroke-width="1" opacity="0.3" stroke-dasharray="8,4" />
+    <!-- Planet 2 - Red -->
+    <g transform="translate(1450, 1000)">
+      <circle r="40" fill="url(#planetRed)" />
+      <circle r="40" fill="#FF8C42" opacity="0.25" filter="url(#shadow)" />
+    </g>
+    <!-- Planet 3 - Small -->
+    <g transform="translate(1000, 550)">
+      <circle r="25" fill="#C0C0C0" />
+      <circle r="25" fill="#E8E8E8" opacity="0.3" filter="url(#shadow)" />
+    </g>
+  </g>
+  
+  <!-- Third orbital ring and asteroid belt -->
+  <g class="orbit" style="animation-duration: 45s;">
+    <circle cx="1000" cy="1000" r="650" fill="none" stroke="#4C5282" stroke-width="0.5" opacity="0.2" stroke-dasharray="3,7" />
+  </g>
+  
+  <!-- Asteroid field -->
+  <g opacity="0.6">
+    <circle cx="1650" cy="1300" r="4" fill="#B0B0B0" />
+    <circle cx="1680" cy="1280" r="3" fill="#A0A0A0" />
+    <circle cx="1620" cy="1350" r="3.5" fill="#C0C0C0" />
+    <circle cx="1700" cy="1330" r="2.5" fill="#909090" />
+    <circle cx="1640" cy="1420" r="3" fill="#B8B8B8" />
+    <circle cx="1720" cy="1250" r="2" fill="#A8A8A8" />
+    <circle cx="1590" cy="1300" r="3.5" fill="#C8C8C8" />
+    <circle cx="1730" cy="1350" r="2.5" fill="#989898" />
+    <circle cx="1660" cy="1450" r="3" fill="#B0B0B0" />
+    <circle cx="1750" cy="1310" r="2" fill="#A0A0A0" />
+  </g>
+  
+  <!-- Distant stars field -->
+  <g class="star" opacity="0.5">
+    <circle cx="200" cy="200" r="1.5" fill="#FFFFFF" />
+    <circle cx="350" cy="150" r="1" fill="#FFE5B4" />
+    <circle cx="500" cy="250" r="1.2" fill="#FFFFFF" />
+    <circle cx="150" cy="400" r="0.8" fill="#87CEEB" />
+    <circle cx="600" cy="100" r="1" fill="#FFFFFF" />
+  </g>
+  
+  <g class="star" opacity="0.4">
+    <circle cx="1800" cy="200" r="1.2" fill="#FFFFFF" />
+    <circle cx="1650" cy="300" r="1" fill="#FFE5B4" />
+    <circle cx="1900" cy="400" r="0.9" fill="#FFFFFF" />
+    <circle cx="1750" cy="150" r="1.1" fill="#87CEEB" />
+  </g>
+  
+  <g class="star" opacity="0.4">
+    <circle cx="200" cy="1800" r="1.1" fill="#FFFFFF" />
+    <circle cx="350" cy="1700" r="1" fill="#FFE5B4" />
+    <circle cx="500" cy="1900" r="1.2" fill="#FFFFFF" />
+    <circle cx="150" cy="1600" r="0.8" fill="#87CEEB" />
+  </g>
+  
+  <g class="star" opacity="0.5">
+    <circle cx="1800" cy="1800" r="1.2" fill="#FFFFFF" />
+    <circle cx="1650" cy="1700" r="1" fill="#FFE5B4" />
+    <circle cx="1900" cy="1900" r="0.9" fill="#FFFFFF" />
+    <circle cx="1750" cy="1650" r="1.1" fill="#87CEEB" />
+  </g>
+  
+  <!-- Constellation lines -->
+  <g stroke="#87CEEB" stroke-width="0.5" opacity="0.3">
+    <line x1="200" y1="200" x2="350" y2="150" />
+    <line x1="350" y1="150" x2="500" y2="250" />
+    <line x1="500" y1="250" x2="200" y2="200" />
+  </g>
+  
+  <!-- Complex geometric patterns -->
+  <g opacity="0.15" stroke="#87CEEB" stroke-width="0.5" fill="none">
+    <!-- Concentric circles -->
+    <circle cx="300" cy="300" r="100" />
+    <circle cx="300" cy="300" r="80" />
+    <circle cx="300" cy="300" r="60" />
+    <circle cx="300" cy="300" r="40" />
+    <!-- Radial lines -->
+    <line x1="300" y1="200" x2="300" y2="100" />
+    <line x1="350" y1="250" x2="390" y2="290" />
+    <line x1="300" y1="400" x2="300" y2="500" />
+    <line x1="250" y1="350" x2="210" y2="390" />
+  </g>
+  
+  <!-- Additional geometric patterns on right -->
+  <g opacity="0.12" stroke="#9D4EDD" stroke-width="0.5" fill="none">
+    <circle cx="1700" cy="300" r="120" />
+    <circle cx="1700" cy="300" r="90" />
+    <circle cx="1700" cy="300" r="60" />
+    <line x1="1700" y1="180" x2="1700" y2="80" />
+    <line x1="1780" y1="220" x2="1840" y2="160" />
+    <line x1="1700" y1="420" x2="1700" y2="520" />
+  </g>
+  
+  <!-- Quantum particles - floating elements -->
+  <g class="float-elem">
+    <circle cx="400" cy="600" r="2" fill="#64C8FF" opacity="0.7" />
+    <circle cx="420" cy="590" r="1.5" fill="#64C8FF" opacity="0.5" />
+    <circle cx="410" cy="620" r="1" fill="#64C8FF" opacity="0.4" />
+  </g>
+  
+  <g class="float-elem" style="animation-delay: 1s;">
+    <circle cx="1600" cy="1400" r="2" fill="#FF6B9D" opacity="0.6" />
+    <circle cx="1620" cy="1390" r="1.5" fill="#FF6B9D" opacity="0.4" />
+    <circle cx="1610" cy="1420" r="1" fill="#FF6B9D" opacity="0.3" />
+  </g>
+  
+  <g class="float-elem" style="animation-delay: 2s;">
+    <circle cx="300" cy="1500" r="2" fill="#64FF64" opacity="0.6" />
+    <circle cx="320" cy="1490" r="1.5" fill="#64FF64" opacity="0.4" />
+    <circle cx="310" cy="1520" r="1" fill="#64FF64" opacity="0.3" />
+  </g>
+  
+  <!-- Wave patterns -->
+  <g opacity="0.1" stroke="#87CEEB" stroke-width="1" fill="none">
+    <path d="M 0 500 Q 250 450 500 500 T 1000 500 T 1500 500 T 2000 500" />
+    <path d="M 0 600 Q 250 550 500 600 T 1000 600 T 1500 600 T 2000 600" />
+    <path d="M 0 1400 Q 250 1350 500 1400 T 1000 1400 T 1500 1400 T 2000 1400" />
+    <path d="M 0 1500 Q 250 1450 500 1500 T 1000 1500 T 1500 1500 T 2000 1500" />
+  </g>
+  
+  <!-- Spiral galaxy representation -->
+  <g opacity="0.3" transform="translate(400, 1400)">
+    <path d="M 0 0 Q 20 -10 30 10 Q 35 20 50 15 Q 60 10 65 30" stroke="#9D4EDD" stroke-width="1" fill="none" />
+    <path d="M 0 0 Q -20 -10 -30 10 Q -35 20 -50 15 Q -60 10 -65 30" stroke="#9D4EDD" stroke-width="1" fill="none" />
+    <path d="M 0 0 Q 10 20 -5 35 Q -15 40 -20 55" stroke="#9D4EDD" stroke-width="1" fill="none" />
+    <path d="M 0 0 Q -10 -20 5 -35 Q 15 -40 20 -55" stroke="#9D4EDD" stroke-width="1" fill="none" />
+  </g>
+  
+  <!-- Spiral galaxy on the right -->
+  <g opacity="0.25" transform="translate(1600, 400)">
+    <path d="M 0 0 Q 25 -15 40 15 Q 45 30 65 20 Q 75 10 85 40" stroke="#64C8FF" stroke-width="1" fill="none" />
+    <path d="M 0 0 Q -25 -15 -40 15 Q -45 30 -65 20 Q -75 10 -85 40" stroke="#64C8FF" stroke-width="1" fill="none" />
+    <path d="M 0 0 Q 15 25 -10 45 Q -20 50 -30 70" stroke="#64C8FF" stroke-width="1" fill="none" />
+    <path d="M 0 0 Q -15 -25 10 -45 Q 20 -50 30 -70" stroke="#64C8FF" stroke-width="1" fill="none" />
+  </g>
+  
+  <!-- Hexagonal lattice pattern -->
+  <g opacity="0.08" stroke="#FFE5B4" stroke-width="0.5">
+    <line x1="100" y1="100" x2="150" y2="130" />
+    <line x1="150" y1="130" x2="150" y2="190" />
+    <line x1="150" y1="190" x2="100" y2="220" />
+    <line x1="100" y1="220" x2="50" y2="190" />
+    <line x1="50" y1="190" x2="50" y2="130" />
+    <line x1="50" y1="130" x2="100" y2="100" />
+  </g>
+  
+  <!-- More hexagonal patterns -->
+  <g opacity="0.06" stroke="#FFE5B4" stroke-width="0.5">
+    <line x1="1850" y1="1850" x2="1900" y2="1880" />
+    <line x1="1900" y1="1880" x2="1900" y2="1940" />
+    <line x1="1900" y1="1940" x2="1850" y2="1970" />
+    <line x1="1850" y1="1970" x2="1800" y2="1940" />
+    <line x1="1800" y1="1940" x2="1800" y2="1880" />
+    <line x1="1800" y1="1880" x2="1850" y2="1850" />
+  </g>
+  
+  <!-- Triangular grid patterns -->
+  <g opacity="0.07" stroke="#87CEEB" stroke-width="0.5">
+    <polygon points="500,700 550,750 450,750" fill="none" />
+    <polygon points="500,600 550,650 450,650" fill="none" />
+    <polygon points="600,700 650,750 550,750" fill="none" />
+    <polygon points="400,700 450,750 350,750" fill="none" />
+  </g>
+  
+  <!-- Cross-hatching patterns -->
+  <g opacity="0.05" stroke="#FF8C42" stroke-width="0.5">
+    <line x1="50" y1="50" x2="200" y2="50" />
+    <line x1="75" y1="50" x2="75" y2="200" />
+    <line x1="100" y1="50" x2="100" y2="200" />
+    <line x1="125" y1="50" x2="125" y2="200" />
+    <line x1="150" y1="50" x2="150" y2="200" />
+    <line x1="175" y1="50" x2="175" y2="200" />
+    <line x1="50" y1="100" x2="200" y2="100" />
+    <line x1="50" y1="150" x2="200" y2="150" />
+  </g>
+  
+  <!-- Fibonacci spiral suggestion -->
+  <g opacity="0.1" stroke="#9D4EDD" stroke-width="1" fill="none">
+    <path d="M 1000 1000 Q 1050 950 1100 1000 Q 1100 1050 1050 1100 Q 950 1100 950 1000 Q 950 850 1100 850 Q 1250 850 1250 1000 Q 1250 1150 1100 1150 Q 900 1150 900 1000" />
+  </g>
+  
+  <!-- Diamond patterns -->
+  <g opacity="0.08" stroke="#64C8FF" stroke-width="0.5">
+    <polygon points="1400,200 1450,250 1400,300 1350,250" fill="none" />
+    <polygon points="1500,200 1550,250 1500,300 1450,250" fill="none" />
+    <polygon points="1400,350 1450,400 1400,450 1350,400" fill="none" />
+    <polygon points="1500,350 1550,400 1500,450 1450,400" fill="none" />
+  </g>
+  
+  <!-- More stars scattered -->
+  <circle cx="750" cy="150" r="0.8" fill="#FFFFFF" opacity="0.6" />
+  <circle cx="1250" cy="180" r="1" fill="#FFFFFF" opacity="0.7" />
+  <circle cx="1100" cy="120" r="0.9" fill="#FFE5B4" opacity="0.5" />
+  <circle cx="850" cy="200" r="1.1" fill="#87CEEB" opacity="0.6" />
+  <circle cx="950" cy="80" r="0.7" fill="#FFFFFF" opacity="0.4" />
+  
+  <circle cx="1900" cy="1000" r="1" fill="#FFFFFF" opacity="0.5" />
+  <circle cx="1750" cy="1100" r="0.9" fill="#FFE5B4" opacity="0.6" />
+  <circle cx="1850" cy="950" r="1.1" fill="#87CEEB" opacity="0.5" />
+  
+  <circle cx="100" cy="1900" r="0.8" fill="#FFFFFF" opacity="0.6" />
+  <circle cx="250" cy="1850" r="1" fill="#FFE5B4" opacity="0.7" />
+  <circle cx="180" cy="1950" r="0.9" fill="#87CEEB" opacity="0.5" />
+  
+  <!-- Energy wisps -->
+  <g opacity="0.2" stroke="#64FF64" stroke-width="1" fill="none">
+    <path d="M 200 1000 Q 300 950 400 1000 Q 500 1050 600 1000" />
+    <path d="M 200 1050 Q 300 1000 400 1050 Q 500 1100 600 1050" />
+  </g>
+  
+  <g opacity="0.15" stroke="#FF6B9D" stroke-width="1" fill="none">
+    <path d="M 1400 800 Q 1500 750 1600 800 Q 1700 850 1800 800" />
+    <path d="M 1400 850 Q 1500 800 1600 850 Q 1700 900 1800 850" />
+  </g>
+  
+  <!-- Circular ripples -->
+  <g opacity="0.1" stroke="#87CEEB" stroke-width="0.5" fill="none">
+    <circle cx="800" cy="800" r="50" />
+    <circle cx="800" cy="800" r="100" />
+    <circle cx="800" cy="800" r="150" />
+  </g>
+  
+  <g opacity="0.08" stroke="#FF8C42" stroke-width="0.5" fill="none">
+    <circle cx="1200" cy="1200" r="60" />
+    <circle cx="1200" cy="1200" r="120" />
+    <circle cx="1200" cy="1200" r="180" />
+  </g>
+  
+  <!-- Radiant lines from center -->
+  <g opacity="0.05" stroke="#FFE5B4" stroke-width="0.5">
+    <line x1="1000" y1="1000" x2="1000" y2="400" />
+    <line x1="1000" y1="1000" x2="1000" y2="1600" />
+    <line x1="1000" y1="1000" x2="400" y2="1000" />
+    <line x1="1000" y1="1000" x2="1600" y2="1000" />
+    <line x1="1000" y1="1000" x2="1350" y2="650" />
+    <line x1="1000" y1="1000" x2="650" y2="1350" />
+    <line x1="1000" y1="1000" x2="1350" y2="1350" />
+    <line x1="1000" y1="1000" x2="650" y2="650" />
+  </g>
+  
+  <!-- Dot matrix -->
+  <g opacity="0.04" fill="#87CEEB">
+    <circle cx="200" cy="500" r="1" />
+    <circle cx="250" cy="500" r="1" />
+    <circle cx="300" cy="500" r="1" />
+    <circle cx="200" cy="550" r="1" />
+    <circle cx="250" cy="550" r="1" />
+    <circle cx="300" cy="550" r="1" />
+    <circle cx="200" cy="600" r="1" />
+    <circle cx="250" cy="600" r="1" />
+    <circle cx="300" cy="600" r="1" />
+  </g>
+  
+  <!-- More dot matrix patterns -->
+  <g opacity="0.035" fill="#9D4EDD">
+    <circle cx="1700" cy="600" r="1" />
+    <circle cx="1750" cy="600" r="1" />
+    <circle cx="1800" cy="600" r="1" />
+    <circle cx="1700" cy="650" r="1" />
+    <circle cx="1750" cy="650" r="1" />
+    <circle cx="1800" cy="650" r="1" />
+    <circle cx="1700" cy="700" r="1" />
+    <circle cx="1750" cy="700" r="1" />
+    <circle cx="1800" cy="700" r="1" />
+  </g>
+  
+  <!-- Complex mathematical curves -->
+  <g opacity="0.08" stroke="#64C8FF" stroke-width="0.5" fill="none">
+    <path d="M 0 800 Q 200 700 400 800 T 800 800 T 1200 800 T 1600 800 T 2000 800" />
+    <path d="M 0 900 Q 200 850 400 900 T 800 900 T 1200 900 T 1600 900 T 2000 900" />
+  </g>
+  
+  <!-- Polynomial curves -->
+  <g opacity="0.06" stroke="#FF6B9D" stroke-width="0.5" fill="none">
+    <path d="M 100 1200 C 300 1100 500 1300 700 1200" />
+    <path d="M 1300 200 C 1500 100 1700 300 1900 200" />
+  </g>
+  
+  <!-- Lissajous-like curves -->
+  <g opacity="0.07" stroke="#64FF64" stroke-width="0.5" fill="none">
+    <ellipse cx="600" cy="500" rx="80" ry="50" transform="rotate(25 600 500)" />
+    <ellipse cx="600" cy="500" rx="60" ry="30" transform="rotate(-25 600 500)" />
+  </g>
+  
+  <!-- Sacred geometry - flower of life suggestion -->
+  <g opacity="0.06" stroke="#FFE5B4" stroke-width="0.5" fill="none">
+    <circle cx="200" cy="1600" r="30" />
+    <circle cx="230" cy="1617" r="30" />
+    <circle cx="230" cy="1683" r="30" />
+    <circle cx="200" cy="1700" r="30" />
+    <circle cx="170" cy="1683" r="30" />
+    <circle cx="170" cy="1617" r="30" />
+  </g>
+  
+  <!-- Additional geometric complexity -->
+  <g opacity="0.04" stroke="#87CEEB" stroke-width="0.5" fill="none">
+    <path d="M 300 300 L 400 250 L 500 300 L 450 400 L 350 400 Z" />
+    <path d="M 1700 700 L 1800 650 L 1900 700 L 1850 800 L 1750 800 Z" />
+  </g>
+  
+  <!-- Starlight rays -->
+  <g opacity="0.05" stroke="#FFFFFF" stroke-width="0.3">
+    <line x1="500" y1="300" x2="450" y2="280" />
+    <line x1="500" y1="300" x2="550" y2="280" />
+    <line x1="500" y1="300" x2="480" y2="250" />
+    <line x1="500" y1="300" x2="520" y2="250" />
+  </g>
+  
+  <!-- Final atmospheric glow layer -->
+  <rect width="2000" height="2000" fill="#0B0E27" opacity="0.05" />
+</svg>
