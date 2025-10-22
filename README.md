@@ -1,13 +1,28 @@
-# Hi, I’m Mir Mohmmad Luqman 👋
+# 👋 Hi, I’m **Mir Mohmmad Luqman**
 
-- I’m interested in Web3  
-- I’m currently learning Advanced Web3 Security and Development  
-- How to reach me: X-@mirmohmadluqman  
-- Email: 0x867012e82708278fbda998030ace0aa9f14fd83e@dmail.ai
+Smart Contract Developer and Auditor specializing in **EVM** (Solidity, Foundry, Hardhat), currently expanding into **Solana** (Rust, Pinocchio, and Anchor Framework).
+Experienced in **manual auditing** and **bug hunting**, with multiple contributions to open-source frameworks.
+---
 
-  
+### 🛠️ Skills
 
+#### 🧠 EVM
 
+* Solidity
+* Foundry
+* Hardhat
+* Certora Prover (Formal Verification)
+* Echidna (Fuzzing)
+* ethers.js
 
+#### ⚙️ SVM
 
+* Rust
+* TypeScript
 
+---
+
+### 📫 Reach Me
+
+* 𝕏 (Twitter): [@mirmohmadluqman](https://x.com/mirmohmadluqman)
+* 📧 Email: [imaybeghost@gmail.com](mailto:imaybeghost@gmail.com)
