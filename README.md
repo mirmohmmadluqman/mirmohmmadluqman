@@ -23,4 +23,4 @@ Experienced in **manual auditing** and **bug hunting**, with multiple contributi
 ### 📫 Reach Me
 
 * 𝕏 (Twitter): [@mirmohmadluqman](https://x.com/mirmohmadluqman)
-* 📧 Email: [imaybeghost@gmail.com](mailto:imaybeghost@gmail.com)
+* 📧 Email: [imaybeghost@gmail.com](mailto:imaybeghost@gmail.com) 
