@@ -18,13 +18,15 @@ Experienced in **manual auditing** and **bug hunting**, with multiple contributi
 * Rust
 * TypeScript
 
-  ![GitHub Stats](https://github-readme-stats.vercel.app/api?username=mirmohmmadluqman&show_icons=true&theme=radical)
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=mirmohmmadluqman&layout=compact)
+### 📊 GitHub Overview
+![GitHub Stats](https://github-readme-stats.vercel.app/api?username=mirmohmmadluqman&show_icons=true&theme=radical)  
+![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=mirmohmmadluqman&layout=compact&theme=radical)
 
 
 ---
 
-### 📫 Reach Me
-
-* 𝕏 (Twitter): [@mirmohmadluqman](https://x.com/mirmohmadluqman)
-* 📧 Email: [imaybeghost@gmail.com](mailto:imaybeghost@gmail.com) 
+### 📫 Get in Touch
+- 🕊️ **X (Twitter):** [@mirmohmmadluqman](https://x.com/mirmohmmadluqman)  
+- 💼 **LinkedIn:** [linkedin.com/in/mirmohmmadluqman](https://linkedin.com/in/mirmohmmadluqman)  
+- 📧 **Email:** [0x867012e82708278fbda998030ace0aa9f14fd83e@dmail.ai](mailto:0x867012e82708278fbda998030ace0aa9f14fd83e@dmail.ai)  
+- 💬 **Discord:** mirmohmmadluqman  
