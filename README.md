@@ -18,11 +18,6 @@ Experienced in **manual auditing** and **bug hunting**, with multiple contributi
 * Rust
 * TypeScript
 
-### 📊 GitHub Overview
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=mirmohmmadluqman&show_icons=true&theme=radical)  
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=mirmohmmadluqman&layout=compact&theme=radical)
-
-
 ---
 
 ### 📫 Get in Touch
