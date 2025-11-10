@@ -18,10 +18,6 @@ Experienced in **manual auditing** and **bug hunting**, with multiple contributi
 * Rust
 * TypeScript
 
-#### In short:
-- `WEB3SKILLS:MCwxLDMsNCwyNCwyNSwzMSwzNiwzNywzOCwsLDYyLDYzLDY0LDY1LDY2LCw2OSw3MCw3MSwsNzYsNzcsNzgsMTExLDExMiwxMTcsMTIyLDEyNCwxMjUsMTI3`
-- Check here: https://web3skills.vercel.app/
-
 ---
 
 ### 📫 Get in Touch
